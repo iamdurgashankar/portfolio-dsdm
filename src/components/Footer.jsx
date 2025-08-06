@@ -26,6 +26,7 @@ const Footer = () => {
             <li><a target='_blank' href="https://github.com/iamdurgashankar">GitHub</a></li>
             <li><a target='_blank' href="https://www.linkedin.com/in/durga-shankar-das-mangaraj/">LinkedIn</a></li>
             <li><a target='_blank' href="https://www.instagram.com/imdsdm/">Instagram</a></li>
+            <li><a target='_blank' href="https://wa.me/918763155488">WhatsApp</a></li>
         </ul>
     </div>
  </div>

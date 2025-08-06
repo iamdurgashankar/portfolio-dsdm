@@ -1,72 +1,204 @@
-import React from 'react'
+import React, { useState } from 'react'
 import send_icon from '../assets/send-icon.png'
 import right_arrow_blod from '../assets/right-arrow-bold.png'
 import right_arrow_blod_dark from '../assets/right-arrow-bold-dark.png'
+import github from '../assets/github.png'
+import { FaGithub, FaExternalLinkAlt, FaStar } from 'react-icons/fa'
 
 const Work = () => {
+  const [showAll, setShowAll] = useState(false);
+  
+  const projects = [
+    {
+      id: 1,
+      title: "Dirac AI",
+      description: "Advanced AI-powered platform offering cutting-edge artificial intelligence solutions and machine learning services",
+      technologies: ["React", "Python", "TensorFlow", "FastAPI", "Docker"],
+      githubUrl: "https://github.com/durgashankardasmangaraj/dirac-ai",
+      liveUrl: "https://diracai.com/",
+      gradient: "from-blue-500 to-purple-600",
+      icon: "🤖",
+      featured: true
+    },
+    {
+      id: 2,
+      title: "Mano Mantapa",
+      description: "Comprehensive event management and venue booking platform with seamless user experience and booking system",
+      technologies: ["React", "Node.js", "MongoDB", "Express", "Stripe"],
+      githubUrl: "https://github.com/durgashankardasmangaraj/mano-mantapa",
+      liveUrl: "https://manomantapa.com/",
+      gradient: "from-green-500 to-teal-600",
+      icon: "🏛️",
+      featured: true
+    },
+    {
+      id: 3,
+      title: "Santosh Fabrication",
+      description: "Professional fabrication services website showcasing industrial solutions and manufacturing capabilities",
+      technologies: ["React", "CSS3", "JavaScript", "Responsive Design"],
+      githubUrl: "https://github.com/durgashankardasmangaraj/santosh-fabrication",
+      liveUrl: "https://santoshfabrication.com/",
+      gradient: "from-orange-500 to-red-600",
+      icon: "🔧",
+      featured: false
+    },
+    {
+      id: 4,
+      title: "Dheera Consulting IT Services",
+      description: "Professional IT consulting services platform offering comprehensive technology solutions and business consulting",
+      technologies: ["React", "TypeScript", "Tailwind CSS", "Next.js"],
+      githubUrl: "https://github.com/durgashankardasmangaraj/dheera-consulting",
+      liveUrl: "https://dheeraconsultingitservices.com/",
+      gradient: "from-purple-500 to-pink-600",
+      icon: "💼",
+      featured: true
+    },
+    {
+      id: 5,
+      title: "Dasho App",
+      description: "Modern mobile application platform with intuitive user interface and seamless functionality",
+      technologies: ["React Native", "Firebase", "Redux", "Expo"],
+      githubUrl: "https://github.com/durgashankardasmangaraj/dasho-app",
+      liveUrl: "https://dashoapp.com/",
+      gradient: "from-indigo-500 to-blue-600",
+      icon: "📱",
+      featured: false
+    },
+    {
+      id: 6,
+      title: "DevInquire",
+      description: "Developer community platform for technical discussions, code reviews, and collaborative problem-solving",
+      technologies: ["React", "Node.js", "PostgreSQL", "Socket.io"],
+      githubUrl: "https://github.com/durgashankardasmangaraj/devinquire",
+      liveUrl: "https://devinquire.com/",
+      gradient: "from-yellow-500 to-orange-600",
+      icon: "👨‍💻",
+      featured: true
+    },
+    {
+      id: 7,
+      title: "DevInquire Dashboard",
+      description: "Comprehensive admin dashboard for DevInquire platform with analytics, user management, and content moderation",
+      technologies: ["React", "Chart.js", "Material-UI", "REST API"],
+      githubUrl: "https://github.com/durgashankardasmangaraj/devinquire-dashboard",
+      liveUrl: "https://dashboard.devinquire.com/",
+      gradient: "from-red-500 to-pink-600",
+      icon: "📊",
+      featured: false
+    },
+    {
+      id: 8,
+      title: "Mano Vaani",
+      description: "Voice-based communication platform integrated with Mano Mantapa for enhanced user interaction and feedback",
+      technologies: ["React", "Web Speech API", "WebRTC", "Firebase"],
+      githubUrl: "https://github.com/durgashankardasmangaraj/mano-vaani",
+      liveUrl: "https://manovaani.manomantapa.com/",
+      gradient: "from-teal-500 to-green-600",
+      icon: "🎤",
+      featured: false
+    },
+    {
+       id: 9,
+       title: "Raj True Dent",
+       description: "Professional dental clinic website with appointment booking, service showcase, and patient management system",
+       technologies: ["React", "PHP", "MySQL", "Bootstrap"],
+       githubUrl: "https://github.com/durgashankardasmangaraj/raj-true-dent",
+       liveUrl: "https://rajtruedent.in/",
+       gradient: "from-cyan-500 to-blue-600",
+       icon: "🦷",
+       featured: false
+     }
+  ];
+
+  const featuredProjects = projects.filter(project => project.featured);
+  const displayedProjects = showAll ? projects : featuredProjects;
+
   return (
     <div id="work" className="w-full px-[12%] py-10 scroll-mt-20">
-    <h4 className="text-center mb-2 text-lg font-Ovo">My portfolio</h4>
-    <h2 className="text-center text-5xl font-Ovo">My latest work</h2>
-    <p className="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo">Welcome to my web development portfolio! Explore a collection of projects showcasing my expertise in front-end development.</p>
+      <h4 className="text-center mb-2 text-lg font-Ovo">My portfolio</h4>
+      <h2 className="text-center text-5xl font-Ovo">My latest work</h2>
+      <p className="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo">
+        Welcome to my web development portfolio! Explore a collection of projects showcasing my expertise in modern web technologies and creative problem-solving.
+      </p>
+      
+      {/* Filter Buttons */}
+      <div className="flex justify-center gap-4 mb-8">
+        <button
+          onClick={() => setShowAll(false)}
+          className={`px-4 py-2 border border-gray-400 rounded-lg transition-all duration-300 flex items-center gap-2 font-Ovo ${
+            !showAll 
+              ? 'bg-lightHover shadow-black dark:bg-darkHover dark:shadow-white' 
+              : 'hover:bg-lightHover hover:shadow-black dark:hover:bg-darkHover dark:hover:shadow-white dark:border-white'
+          }`}
+        >
+          <FaStar className="text-sm" />Featured ({featuredProjects.length})
+        </button>
+        <button
+          onClick={() => setShowAll(true)}
+          className={`px-4 py-2 border border-gray-400 rounded-lg transition-all duration-300 font-Ovo ${
+            showAll 
+              ? 'bg-lightHover shadow-black dark:bg-darkHover dark:shadow-white' 
+              : 'hover:bg-lightHover hover:shadow-black dark:hover:bg-darkHover dark:hover:shadow-white dark:border-white'
+          }`}
+        >
+          All Projects ({projects.length})
+        </button>
+      </div>
 
-    <div className="grid grid-cols-auto my-10 gap-5 dark:text-black">
-        <div className="aspect-square bg-[url('./assets/work-1.png')] bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group">
-
-            <div className="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7 border border-black">
-                <div>
-                    <h2 className="font-semibold">Frontend project</h2>
-                    <p className="text-sm text-gray-700">Web Application</p>
-                </div>
-                <div className="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition">
-                    <img src={send_icon} alt="" className="w-5"/>
-                </div>
+      <div className="grid grid-cols-auto gap-6 my-10">
+        {displayedProjects.map((project) => (
+          <div
+            key={project.id}
+            className="border border-gray-400 rounded-lg p-6 cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 hover:shadow-black dark:border-white dark:hover:bg-darkHover dark:hover:shadow-white relative"
+          >
+            {/* Featured Badge */}
+            {project.featured && (
+              <div className="absolute top-3 right-3 bg-gray-700 text-white px-2 py-1 rounded text-xs font-Ovo flex items-center gap-1 dark:bg-white dark:text-black">
+                <FaStar className="text-xs" /> Featured
+              </div>
+            )}
+            
+            {/* Project Icon */}
+             <div className="text-3xl mb-4">{project.icon}</div>
+             
+             {/* Project Content */}
+             <h3 className="text-lg my-4 text-gray-700 dark:text-white font-Ovo">{project.title}</h3>
+             <p className="text-sm text-gray-600 leading-5 dark:text-white/80 mb-4 font-Ovo">{project.description}</p>
+             
+             {/* Technologies */}
+            <div className="flex flex-wrap gap-1 mb-4">
+              {project.technologies.map((tech, index) => (
+                <span
+                  key={index}
+                  className="text-xs bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-Ovo"
+                >
+                  {tech}
+                </span>
+              ))}
             </div>
-        </div>
-        <div className="aspect-square bg-[url('./assets/work-2.png')] bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group">
 
-            <div className="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7 border border-black">
-                <div>
-                    <h2 className="font-semibold">Single Page based app</h2>
-                    <p className="text-sm text-gray-700">Web app</p>
-                </div>
-                <div className="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition">
-                    <img src={send_icon} alt="" className="w-5"/>
-                </div>
+            {/* Links */}
+            <div className="flex gap-3 mt-4">
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-sm font-Ovo"
+              >
+                View Live <img src={right_arrow_blod} alt="" className="w-3 dark:hidden"/>
+                <img src={right_arrow_blod_dark} alt="" className="w-3 hidden dark:block"/>
+              </a>
             </div>
-        </div>
-        <div className="aspect-square bg-[url('./assets/work-3.png')] bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group">
+          </div>
+        ))}
+      </div>
 
-            <div className="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7 border border-black">
-                <div>
-                    <h2 className="font-semibold">CMS theme Devlopment</h2>
-                    <p className="text-sm text-gray-700">Web Devlopment</p>
-                </div>
-                <div className="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition">
-                    <img src={send_icon} alt="" className="w-5"/>
-                </div>
-            </div>
-        </div>
-        <div className="aspect-square bg-[url('./assets/work-4.png')] bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group">
-
-            <div className="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7 border border-black">
-                <div>
-                    <h2 className="font-semibold">Convert PSD to Website</h2>
-                    <p className="text-sm text-gray-700">UI Design</p>
-                </div>
-                <div className="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition">
-                    <img src={send_icon} alt="" className="w-5"/>
-                </div>
-            </div>
-        </div>
-    </div>
-    <a href="#" className="w-max flex items-center justify-center gap-2 text-gray-700 border-[0.5px] border-gray-700 rounded-full py-3 px-10 mx-auto my-20 hover:bg-lightHover duration-500
-    dark:text-white dark:border-white dark:hover:bg-darkHover">Show more
+      <a href="https://github.com/iamdurgashankar" target="_blank" rel="noopener noreferrer" className="w-max flex items-center justify-center gap-2 text-gray-700 border-[0.5px] border-gray-700 rounded-full py-3 px-10 mx-auto my-20 hover:bg-lightHover duration-500 dark:text-white dark:border-white dark:hover:bg-darkHover font-Ovo">
+        Show more
         <img src={right_arrow_blod} alt="" className="w-4 dark:hidden"/>
         <img src={right_arrow_blod_dark} alt="" className="w-4 hidden dark:block"/>
-    </a>
-
-</div>
+      </a>
+    </div>
   )
 }
 

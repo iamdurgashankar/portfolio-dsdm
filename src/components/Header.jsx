@@ -10,7 +10,7 @@ const Header = () => {
     <h3 className="flex items-end gap-2 text-xl md:text-2xl mb-3 font-Ovo">
         Hi! I'm Durga Shankar Das Mangaraj <img src="./assets/hand-icon.png" alt="" className="w-6"/></h3>
     <h1 className="text-3xl sm:text-6xl lg:text-[66px] font-Ovo">frontend web developer based in Bengaluru.</h1>
-    <p className="max-w-2xl mx-auto font-Ovo">I am a frontend developer from Bengaluru, India with 5 years of experience in multiple companies like Anteriad, Kelly OCG and Element14.</p>
+    <p className="max-w-2xl mx-auto font-Ovo">I am a passionate frontend developer from Bengaluru, India with 5 years of experience building web applications at companies like Anteriad, Kelly OCG and Element14.</p>
 
     <div className="flex flex-col sm:flex-row items-center gap-4 mt-4">
         <a href="#contact"
