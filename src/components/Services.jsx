@@ -7,6 +7,11 @@ import right_arrow from '../assets/right-arrow.png'
 
 const Services = () => {
   const [selectedService, setSelectedService] = useState(null)
+  
+  // Calculate years of experience dynamically based on start year 2019
+  const startYear = 2019;
+  const currentYear = new Date().getFullYear();
+  const yearsOfExperience = currentYear - startYear;
 
   const servicesData = [
     {
@@ -95,7 +100,7 @@ const Services = () => {
     <div id="services" className="w-full px-[12%] py-10 scroll-mt-20">
     <h4 className="text-center mb-2 text-lg font-Ovo">What i offer</h4>
     <h2 className="text-center text-5xl font-Ovo">My services</h2>
-    <p className="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo">I am a frontend developer from Bengaluru, Karnataka with 5 years of experience in multiple companies like Anteriad, Element14 and Kellyocg.</p>
+    <p className="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo">I am a frontend developer from Bengaluru, India with {yearsOfExperience} years of experience in multiple companies like Anteriad, Element14 and Kellyocg.</p>
 
     <div className="grid grid-cols-auto gap-6 my-10">
         {servicesData.map((service) => (
