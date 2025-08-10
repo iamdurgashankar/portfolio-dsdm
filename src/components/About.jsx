@@ -35,7 +35,7 @@ const About = () => {
             </div>
         </div>
         <div className="flex-1">
-            <p className="mb-10 max-w-2xl font-Ovo">I am a passionate frontend developer from Bengaluru, Karnataka with {yearsOfExperience} years of hands-on experience in building scalable web applications. I have successfully delivered projects for companies like Anteriad, Element14, and Kelly OCG, specializing in React.js, modern JavaScript frameworks, and responsive design solutions that drive business growth.</p>
+            <p className="mb-10 max-w-2xl font-Ovo">I am a passionate frontend developer from Bengaluru, India with {yearsOfExperience} years of hands-on experience in building scalable web applications. I have successfully delivered projects for companies like Anteriad, Element14, and Kelly OCG, specializing in React.js, modern JavaScript frameworks, and responsive design solutions that drive business growth.</p>
 
             <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl">
                 <li className="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 hover:shadow-black

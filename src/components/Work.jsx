@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import send_icon from '../assets/send-icon.png'
 import right_arrow_blod from '../assets/right-arrow-bold.png'
 import right_arrow_blod_dark from '../assets/right-arrow-bold-dark.png'
@@ -6,6 +6,7 @@ import github from '../assets/github.png'
 import { FaGithub, FaExternalLinkAlt, FaStar } from 'react-icons/fa'
 
 const Work = () => {
+  const [showAll, setShowAll] = useState(false);
   
   const projects = [
     {
@@ -110,7 +111,7 @@ const Work = () => {
   ];
 
   const featuredProjects = projects.filter(project => project.featured);
-  const displayedProjects = projects; // Show all projects by default
+  const displayedProjects = showAll ? projects : featuredProjects;
 
   return (
     <div id="work" className="w-full px-[12%] py-10 scroll-mt-20">
@@ -120,10 +121,37 @@ const Work = () => {
         Welcome to my web development portfolio! Explore a collection of projects showcasing my expertise in modern web technologies and creative problem-solving.
       </p>
       
+      {/* Filter Buttons */}
+      <div className="flex items-center justify-center gap-2 text-gray-500 text-sm mb-8">
+        <button 
+          onClick={() => setShowAll(false)}
+          className={`py-2 px-4 rounded-full transition-all duration-300 font-Ovo ${
+            !showAll 
+              ? 'bg-gray-700 text-white dark:bg-white dark:text-black' 
+              : 'hover:text-gray-700 dark:hover:text-white'
+          }`}
+        >
+          Featured
+        </button>
+        <button 
+          onClick={() => setShowAll(true)}
+          className={`py-2 px-4 rounded-full transition-all duration-300 font-Ovo ${
+            showAll 
+              ? 'bg-gray-700 text-white dark:bg-white dark:text-black' 
+              : 'hover:text-gray-700 dark:hover:text-white'
+          }`}
+        >
+          All Projects
+        </button>
+      </div>
+      
       {/* Projects Info */}
       <div className="text-center mb-8">
         <p className="text-gray-600 dark:text-white/80 font-Ovo">
-          Showcasing all {projects.length} projects including {featuredProjects.length} featured works
+          {showAll 
+            ? `Showcasing all ${projects.length} projects` 
+            : `Showcasing ${featuredProjects.length} featured projects`
+          }
         </p>
       </div>
 
