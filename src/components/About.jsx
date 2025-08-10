@@ -15,6 +15,11 @@ import git from '../assets/git.png'
 import webstorm from '../assets/webstorm.png'
 
 const About = () => {
+  // Calculate years of experience dynamically based on start year 2019
+  const startYear = 2019;
+  const currentYear = new Date().getFullYear();
+  const yearsOfExperience = currentYear - startYear;
+
   return (
     <div id="about" className="w-full px-[12%] py-10 scroll-mt-20">
     <h4 className="text-center mb-2 text-lg font-Ovo">Introduction</h4>
@@ -30,25 +35,25 @@ const About = () => {
             </div>
         </div>
         <div className="flex-1">
-            <p className="mb-10 max-w-2xl font-Ovo">I am a passionate frontend developer from Bengaluru, Karnataka with 5 years of hands-on experience in building scalable web applications. I have successfully delivered projects for companies like Anteriad, Element14, and Kelly OCG, specializing in React.js, modern JavaScript frameworks, and responsive design solutions that drive business growth.</p>
+            <p className="mb-10 max-w-2xl font-Ovo">I am a passionate frontend developer from Bengaluru, Karnataka with {yearsOfExperience} years of hands-on experience in building scalable web applications. I have successfully delivered projects for companies like Anteriad, Element14, and Kelly OCG, specializing in React.js, modern JavaScript frameworks, and responsive design solutions that drive business growth.</p>
 
-            <ul className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl">
+            <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl">
                 <li className="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 hover:shadow-black
                 dark:border-white dark:hover:shadow-white dark:hover:bg-darkHover/50
                 ">
                     <img src={code_icon} alt="" className="w-7 mt-3 dark:hidden"/>
                     <img src={code_icon_dark} alt="" className="w-7 mt-3 hidden dark:block"/>
 
-                    <h3 className="my-4 font-semibold text-gray-700 dark:text-white">Languages</h3>
-                    <p className="text-gray-600 text-sm dark:text-white/80">HTML, CSS, JavaScript React Js</p>
+                    <h3 className="my-4 font-semibold text-gray-700 dark:text-white">Frontend Technologies</h3>
+                    <p className="text-gray-600 text-sm dark:text-white/80">HTML, CSS, JavaScript, React.js, Next.js, TypeScript, Tailwind CSS, Vue.js</p>
                 </li>
                 <li className="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 hover:shadow-black dark:border-white dark:hover:shadow-white dark:hover:bg-darkHover/50">
 
                     <img src={edu_icon} alt="" className="w-7 mt-3 dark:hidden"/>
                     <img src={edu_icon_dark} alt="" className="w-7 mt-3 hidden dark:block"/>
 
-                    <h3 className="my-4 font-semibold text-gray-700 dark:text-white">Education</h3>
-                    <p className="text-gray-600 text-sm dark:text-white/80">B.Tech in Mechanical Engineering </p>
+                    <h3 className="my-4 font-semibold text-gray-700 dark:text-white">Backend & Database</h3>
+                    <p className="text-gray-600 text-sm dark:text-white/80">PHP, MySQL/SQL, Node.js, Express.js</p>
                 </li>
                 <li className="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 hover:shadow-black dark:border-white dark:hover:shadow-white dark:hover:bg-darkHover/50">
 
@@ -56,8 +61,17 @@ const About = () => {
                     <img src={project_icon_dark} alt="" className="w-7 mt-3 hidden dark:block"/>
 
 
-                    <h3 className="my-4 font-semibold text-gray-700 dark:text-white">Projects</h3>
-                    <p className="text-gray-600 text-sm dark:text-white/80">Built more than 5 projects </p>
+                    <h3 className="my-4 font-semibold text-gray-700 dark:text-white">Cloud & DevOps</h3>
+                    <p className="text-gray-600 text-sm dark:text-white/80">AWS, Docker, GitHub Actions</p>
+                </li>
+                <li className="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 hover:shadow-black dark:border-white dark:hover:shadow-white dark:hover:bg-darkHover/50">
+
+                    <img src={code_icon} alt="" className="w-7 mt-3 dark:hidden"/>
+                    <img src={code_icon_dark} alt="" className="w-7 mt-3 hidden dark:block"/>
+
+
+                    <h3 className="my-4 font-semibold text-gray-700 dark:text-white">Gen AI & ML</h3>
+                    <p className="text-gray-600 text-sm dark:text-white/80">OpenAI API, LangChain, Gemini API, Hugging Face</p>
                 </li>
             </ul>
             <h4 className="my-6 text-gray-700 font-Ovo dark:text-white/80">Tools i use</h4>
