@@ -129,34 +129,36 @@ const Work = () => {
       <p className="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo">
         Welcome to my web development portfolio! Explore a collection of projects showcasing my expertise in modern web technologies and creative problem-solving.
       </p>
-
+      
       {/* Filter Buttons */}
       <div className="flex items-center justify-center gap-2 text-gray-500 text-sm mb-8">
-        <button
+        <button 
           onClick={() => setShowAll(false)}
-          className={`py-2 px-4 rounded-full transition-all duration-300 font-Ovo ${!showAll
-              ? 'bg-gray-700 text-white dark:bg-white dark:text-black'
+          className={`py-2 px-4 rounded-full transition-all duration-300 font-Ovo ${
+            !showAll 
+              ? 'bg-gray-700 text-white dark:bg-white dark:text-black' 
               : 'hover:text-gray-700 dark:hover:text-white'
-            }`}
+          }`}
         >
           Featured
         </button>
-        <button
+        <button 
           onClick={() => setShowAll(true)}
-          className={`py-2 px-4 rounded-full transition-all duration-300 font-Ovo ${showAll
-              ? 'bg-gray-700 text-white dark:bg-white dark:text-black'
+          className={`py-2 px-4 rounded-full transition-all duration-300 font-Ovo ${
+            showAll 
+              ? 'bg-gray-700 text-white dark:bg-white dark:text-black' 
               : 'hover:text-gray-700 dark:hover:text-white'
-            }`}
+          }`}
         >
           All Projects
         </button>
       </div>
-
+      
       {/* Projects Info */}
       <div className="text-center mb-8">
         <p className="text-gray-600 dark:text-white/80 font-Ovo">
-          {showAll
-            ? `Showcasing all ${projects.length} projects`
+          {showAll 
+            ? `Showcasing all ${projects.length} projects` 
             : `Showcasing ${featuredProjects.length} featured projects`
           }
         </p>
