@@ -8,6 +8,7 @@ const Header = () => {
   const startYear = 2019;
   const currentYear = new Date().getFullYear();
   const yearsOfExperience = currentYear - startYear;
+  const resumeHref = `${import.meta.env.BASE_URL}Durga-Shankar-Das-Mangaraj.pdf`;
   return (
     <div className="w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col items-center justify-center gap-4">
     <img src={profile_img} alt="" className="rounded-full w-32"/>
@@ -21,7 +22,7 @@ const Header = () => {
         className="px-10 py-3 border rounded-full bg-gradient-to-r from-[#b820e6] to-[#da7d20] text-white flex items-center gap-2 dark:border-transparent">
         contact me <img src={right_arrow_white} alt="" className="w-4"/></a>
 
-        <a href="/portfolio-dsdm/Durga-Shankar-Das-Mangaraj.pdf" download
+        <a href={resumeHref} download
         className="px-10 py-3 border rounded-full border-gray-500 flex items-center gap-2 bg-white dark:text-black">
         my resume <img src={download_icon} alt="" className="w-4"/></a>
     </div>
