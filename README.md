@@ -21,7 +21,7 @@ To run this project locally, clone the repository and install the dependencies:
 git clone https://github.com/iamdurgashankar/portfolio-dsdm.git
 cd portfolio-dsdm
 npm install
-npm start
+npm run dev
 
 Deployment
 
