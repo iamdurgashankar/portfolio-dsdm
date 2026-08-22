@@ -38,9 +38,16 @@ jobs:
       
     - name: Build
       run: npm run build
+
+    - name: Validate Pages artifact
+      run: |
+        test -f dist/.nojekyll
+        ! grep -q 'src/main.jsx' dist/index.html
       
     - name: Setup Pages
       uses: actions/configure-pages@v4
+      with:
+        enablement: true
       
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
