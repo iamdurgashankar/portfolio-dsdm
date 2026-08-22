@@ -41,13 +41,15 @@ jobs:
 
     - name: Validate Pages artifact
       run: |
-        test -f dist/.nojekyll
-        ! grep -q 'src/main.jsx' dist/index.html
+        test -f dist/.nojekyll || { echo "Missing dist/.nojekyll in build output"; exit 1; }
+        test -f dist/index.html || { echo "Missing dist/index.html in build output"; exit 1; }
+        if grep -q 'src/main.jsx' dist/index.html; then
+          echo "dist/index.html references src/main.jsx; expected built assets in dist"
+          exit 1
+        fi
       
     - name: Setup Pages
       uses: actions/configure-pages@v4
-      with:
-        enablement: true
       
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
